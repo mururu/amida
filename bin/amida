@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require 'slop'
+require File.expand_path('../../lib/amida', __FILE__)
+
+opts = Slop.parse(:help => true) do
+  banner "amida [options]\n"
+  on :w, :width, 'Width of Amida. Default is 5', :argument => true
+  on :h, :height, 'Height of Amida Default is 10', :argument => true
+end
+
+unless opts.help?
+  Amida::Amida.new(:width => opts[:width] && opts[:width].to_i, :height => opts[:height] && opts[:height].to_i).render
+end
