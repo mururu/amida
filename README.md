@@ -1,6 +1,6 @@
 # Amida
 
-A Generator Amidakuji
+A Generator of Amidakuji
 
 ## Installation
 
