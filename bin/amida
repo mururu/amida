@@ -6,8 +6,11 @@ opts = Slop.parse(:help => true) do
   banner "amida [options]\n"
   on :w, :width, 'Width of Amida. Default is 5', :argument => true
   on :h, :height, 'Height of Amida Default is 10', :argument => true
+  on :namu, 'NAMEAMIDABUTSU'
 end
 
-unless opts.help?
+if opts.namu?
+  Amida.namu
+elsif !opts.help?
   Amida::Amida.new(:width => opts[:width] && opts[:width].to_i, :height => opts[:height] && opts[:height].to_i).render
 end

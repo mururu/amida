@@ -1,3 +1,4 @@
+# coding: utf-8
 %w{
   version
   label
@@ -22,6 +23,21 @@ module Amida
       @label.render
       @route.render
       @prize.render
+    end
+  end
+
+  class << self
+    def namu
+      puts <<-AA
+　 ／￣￣￣＼
+　｜　　　　｜
+　｜　　　　｜　＿
+　｜　 ^　 ^ ) ///ﾄ､
+　(　 >ﾉ(＿)Y ////)|
+　∧丶i-=ニ=|｜　｜|
+／＼＼＼ ￣ノ｜　ﾉノ
+／　＼＼ ￣　/　/ |
+      AA
     end
   end
 end
