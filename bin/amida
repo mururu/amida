@@ -2,11 +2,14 @@
 require 'slop'
 require File.expand_path('../../lib/amida', __FILE__)
 
-opts = Slop.parse(:help => true) do
+opts = Slop.parse do
   banner "amida [options]\n"
   on :w, :width, 'Width of Amida. Default is 5', :argument => true
   on :h, :height, 'Height of Amida Default is 10', :argument => true
   on :namu, 'NAMEAMIDABUTSU'
+  on :help, 'Display this help message.', :tail => true do
+    $stderr.puts help
+  end
 end
 
 if opts.namu?
