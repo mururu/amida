@@ -11,7 +11,8 @@ module Amida
 
     private
     def to_s
-      ' ' + (@content.join('   ')) + ' '
+      content = @content.map.with_index{|s,i| "\e[#{i%5 < 2 ? i%5 + 31 : i%5 + 32}m" + s + "\e[0m"}
+      ' ' + (content.join('   ')) + ' '
     end
   end
 end

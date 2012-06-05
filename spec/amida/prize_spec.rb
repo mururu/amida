@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Amida::Prize do
   context 'width == 5' do
     let(:prize) { Amida::Prize.new(5) }
-    let(:correct_result) { '    !!!            ' }
+    let(:correct_result) { "    \e[33m!!!\e[0m            " }
 
     describe '#to_s' do
       context 'when prize index == 1' do

@@ -18,7 +18,8 @@ module Amida
     end
 
     def to_s
-      @content.join(' ')
+      content = @content.map{|s| s == '!!!' ? "\e[33m" + s + "\e[0m" : s}
+      content.join(' ')
     end
   end
 end
